@@ -5,7 +5,6 @@ import com.codegym.models.Category;
 import com.codegym.services.BlogService;
 import com.codegym.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,7 +35,7 @@ public class APICategoryController {
 
         ModelAndView modelAndView = new ModelAndView("/category/create");
         modelAndView.addObject("category", new Category());
-        modelAndView.addObject("message", "Create Category Succesfull");
+        modelAndView.addObject("message", "New category created successfully");
         return modelAndView;
     }
 
@@ -56,7 +55,7 @@ public class APICategoryController {
 
         ModelAndView modelAndView = new ModelAndView("/category/edit");
         modelAndView.addObject("category", category);
-        modelAndView.addObject("message", "Update category succesfull");
+        modelAndView.addObject("message", "Update category successfully");
         return modelAndView;
     }
 

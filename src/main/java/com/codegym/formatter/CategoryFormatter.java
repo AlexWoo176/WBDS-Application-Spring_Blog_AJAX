@@ -9,7 +9,7 @@ import java.text.ParseException;
 import java.util.Locale;
 
 public class CategoryFormatter implements Formatter<Category> {
-    private CategoryService categoryService;
+    private final CategoryService categoryService;
 
     @Autowired
     public CategoryFormatter(CategoryService categoryService) {

@@ -7,7 +7,9 @@ import com.codegym.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
@@ -25,7 +27,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category findById(Long id) {
-        return categoryRepository.findOne(id);
+        return categoryRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -35,6 +37,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void remove(Long id) {
-        categoryRepository.delete(id);
+        categoryRepository.deleteById(id);
     }
 }
